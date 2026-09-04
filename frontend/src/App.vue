@@ -1,26 +1,20 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <v-app>
+    <v-app-bar app color="primary" dark>
+      <v-toolbar-title class="font-weight-bold" style="cursor: pointer" @click="$router.push('/')">
+        Articles System
+      </v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-btn text to="/">Статьи</v-btn>
+      <v-btn text to="/analytic">Аналитика</v-btn>
+    </v-app-bar>
+
+    <v-main>
+      <router-view></router-view>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+export default { name: 'App' };
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
